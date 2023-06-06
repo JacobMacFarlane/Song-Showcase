@@ -22,7 +22,7 @@ export const Song: React.FC<SongProps> = (props: SongProps) => {
     return (
         <div>
             <img src={song.albumCover} alt={song.albumTitle} />
-            <h3>{song.albumTitle}</h3>
+            <h3>{song.title}</h3>
             <button 
             name={song.title}
             onClick={handleFavorite}>
