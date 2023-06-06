@@ -68,12 +68,14 @@ const App: React.FC = () => {
       if (asapData) {
         setSongs(prevSongs => [...prevSongs, ...asapData]);
       }
+      if (kendrickData) {
+        setSongs(prevSongs => [...prevSongs,...kendrickData]);
+      }
       setLoading(false);
     }
     fetchData();
+    console.log(songs, 'right here')
   }, []);
-
-  console.log(songs, 'in app');
 
   return (
     <div className="App">
