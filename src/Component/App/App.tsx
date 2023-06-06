@@ -74,7 +74,6 @@ const App: React.FC = () => {
       setLoading(false);
     }
     fetchData();
-    console.log(songs, 'right here')
   }, []);
 
   return (

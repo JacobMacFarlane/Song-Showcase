@@ -7,14 +7,12 @@ interface MainProps {
 }
 
 export const Main: FC<MainProps> = (props: MainProps) => {
-const songs = props.data.map((song) => {
-    return <Song key={song.id} song={song} />
+const songs = props.data.map((song, index) => {
+    return <Song key={index} song={song} />
 })
     return (
         <div>
-            <p>
-               {songs}
-            </p>
+            {songs}
         </div>
     )
 }

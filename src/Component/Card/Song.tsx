@@ -4,7 +4,6 @@ interface SongProps {
     song: SongDeets
 }
 export const Song: FC<SongProps> = (props: SongProps) => {
-    console.log(props.song, 'in song');
     return (
         <div>
             <img src={props.song.albumCover} alt={props.song.albumTitle} />

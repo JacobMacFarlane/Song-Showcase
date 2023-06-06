@@ -1,7 +1,6 @@
 import { getCleanData } from "./utilities";
 import { SongDeets } from "./Component/App/App";
 const apiKey = process.env.REACT_APP_API_KEY;
-console.log(process.env.REACT_APP_API_KEY, 'apiKey');
 export const fetchLanaDelReyData = async () => {
 const url = 'https://deezerdevs-deezer.p.rapidapi.com/search?q=Lana%20del%20rey';
 const options = {
