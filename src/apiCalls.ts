@@ -1,12 +1,13 @@
 import { getCleanData } from "./utilities";
 import { SongDeets } from "./Component/App/App";
-
+const apiKey = process.env.REACT_APP_API_KEY;
+console.log(process.env.REACT_APP_API_KEY, 'apiKey');
 export const fetchLanaDelReyData = async () => {
 const url = 'https://deezerdevs-deezer.p.rapidapi.com/search?q=Lana%20del%20rey';
 const options = {
 	method: 'GET',
 	headers: {
-		'X-RapidAPI-Key': 'e37521dcf9msh3d8c247cfc15da2p136af2jsn09a32fbf4acc',
+		'X-RapidAPI-Key': process.env.REACT_APP_API_KEY,
 		'X-RapidAPI-Host': 'deezerdevs-deezer.p.rapidapi.com'
 	}
 };
@@ -25,7 +26,7 @@ try {
     const options = {
       method: 'GET',
       headers: {
-        'X-RapidAPI-Key': 'e37521dcf9msh3d8c247cfc15da2p136af2jsn09a32fbf4acc',
+        'X-RapidAPI-Key': process.env.REACT_APP_API_KEY,
         'X-RapidAPI-Host': 'deezerdevs-deezer.p.rapidapi.com'
       }
     };
@@ -45,7 +46,7 @@ try {
 const options = {
 	method: 'GET',
 	headers: {
-		'X-RapidAPI-Key': 'e37521dcf9msh3d8c247cfc15da2p136af2jsn09a32fbf4acc',
+		'X-RapidAPI-Key': process.env.REACT_APP_API_KEY,
 		'X-RapidAPI-Host': 'deezerdevs-deezer.p.rapidapi.com'
 	}
 };
@@ -65,7 +66,7 @@ export const fetchRadioHeadData = async () => {
 const options = {
 	method: 'GET',
 	headers: {
-		'X-RapidAPI-Key': 'e37521dcf9msh3d8c247cfc15da2p136af2jsn09a32fbf4acc',
+		'X-RapidAPI-Key': process.env.REACT_APP_API_KEY,
 		'X-RapidAPI-Host': 'deezerdevs-deezer.p.rapidapi.com'
 	}
 };
@@ -85,7 +86,7 @@ export const fetchPierreBourneData = async () => {
 const options = {
 	method: 'GET',
 	headers: {
-		'X-RapidAPI-Key': 'e37521dcf9msh3d8c247cfc15da2p136af2jsn09a32fbf4acc',
+		'X-RapidAPI-Key': process.env.REACT_APP_API_KEY,
 		'X-RapidAPI-Host': 'deezerdevs-deezer.p.rapidapi.com'
 	}
 };
@@ -104,7 +105,7 @@ export const fetchTheCureData = async () => {
 const options = {
 	method: 'GET',
 	headers: {
-		'X-RapidAPI-Key': 'e37521dcf9msh3d8c247cfc15da2p136af2jsn09a32fbf4acc',
+		'X-RapidAPI-Key': process.env.REACT_APP_API_KEY,
 		'X-RapidAPI-Host': 'deezerdevs-deezer.p.rapidapi.com'
 	}
 };
@@ -123,7 +124,7 @@ export const fetchDestroyLonelyData = async () => {
     const options = {
         method: 'GET',
         headers: {
-            'X-RapidAPI-Key': 'e37521dcf9msh3d8c247cfc15da2p136af2jsn09a32fbf4acc',
+            'X-RapidAPI-Key': process.env.REACT_APP_API_KEY,
             'X-RapidAPI-Host': 'deezerdevs-deezer.p.rapidapi.com'
         }
     };
@@ -142,7 +143,7 @@ export const fetchDeftonesData = async () => {
 const options = {
 	method: 'GET',
 	headers: {
-		'X-RapidAPI-Key': 'e37521dcf9msh3d8c247cfc15da2p136af2jsn09a32fbf4acc',
+		'X-RapidAPI-Key': process.env.REACT_APP_API_KEY,
 		'X-RapidAPI-Host': 'deezerdevs-deezer.p.rapidapi.com'
 	}
 };
@@ -161,7 +162,7 @@ export const fetchPlayboiCarti = async () => {
 const options = {
 	method: 'GET',
 	headers: {
-		'X-RapidAPI-Key': 'e37521dcf9msh3d8c247cfc15da2p136af2jsn09a32fbf4acc',
+		'X-RapidAPI-Key': process.env.REACT_APP_API_KEY,
 		'X-RapidAPI-Host': 'deezerdevs-deezer.p.rapidapi.com'
 	}
 };
@@ -180,7 +181,7 @@ export const fetchKendrickLamarData = async () => {
 const options = {
 	method: 'GET',
 	headers: {
-		'X-RapidAPI-Key': 'e37521dcf9msh3d8c247cfc15da2p136af2jsn09a32fbf4acc',
+		'X-RapidAPI-Key': process.env.REACT_APP_API_KEY,
 		'X-RapidAPI-Host': 'deezerdevs-deezer.p.rapidapi.com'
 	}
 };
