@@ -6,17 +6,20 @@ interface SongProps {
     chooseSong: (song: SongDeets) => void;
     removeFavorite: (song: SongDeets) => void;
 }
+
 export const Song: React.FC<SongProps> = (props: SongProps) => {
+    // const [favorite, setFavorite] = useState(false);
     const {song, chooseSong, removeFavorite} = props
-    const [favorite, setFavorite] = useState(false);
 
    const handleFavorite = () => {
-    if (!favorite) {
-        setFavorite(true);
+    if (!song.favorited) {
+        song.favorited = true;
         chooseSong(song);
+        // setFavorite(true);
         } else {
-        setFavorite(false);
+        song.favorited= false
         removeFavorite(song);
+        // setFavorite(false);
    }
    }
     return (
@@ -24,9 +27,10 @@ export const Song: React.FC<SongProps> = (props: SongProps) => {
             <img src={song.albumCover} alt={song.albumTitle} />
             <h3>{song.title}</h3>
             <button 
-            name={song.title}
-            onClick={handleFavorite}>
-                {favorite ? "Unfavorite" : "Favorite"}
+                name={song.title}
+                onClick={() => handleFavorite()}
+                >
+                    {song.favorited ? 'Unfavorite' : 'Favorite'}
             </button>
         </div>
     )

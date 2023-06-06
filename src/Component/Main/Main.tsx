@@ -9,12 +9,15 @@ interface MainProps {
 }
 
 export const Main: FC<MainProps> = (props: MainProps) => {
-const songs: JSX.Element[] = props.data.map((song: SongDeets, index: number) => {
-    return <Song 
-        key={index} 
-        song={song}
-        chooseSong={props.chooseSong}
-        removeFavorite={props.removeFavorite} />
+const songs: JSX.Element[] = props.data.map(
+    (song: SongDeets, index: number) => {
+    return (
+        <Song 
+            key={index} 
+            song={song}
+            chooseSong={props.chooseSong}
+            removeFavorite={props.removeFavorite} />
+    )
 })
     return (
         <main>

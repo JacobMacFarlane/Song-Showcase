@@ -14,8 +14,7 @@ export type SongDeets = {
   artistId: number
   artistName: string
   rank: number
-  rating?: number
-  favorite?: boolean
+  favorited: boolean
 }
 
 const App: React.FC = () => {
@@ -30,7 +29,9 @@ const App: React.FC = () => {
   }
 
   const removeFavorite = (songToRemove: SongDeets) => {
-    const newFavState = favorites.filter((fav) => fav.id !== songToRemove.id);
+    const newFavState = favorites.filter(
+      (fav) => fav.id !== songToRemove.id
+      );
     setFavorites(newFavState);
   }
   const fetchData = async () => {
