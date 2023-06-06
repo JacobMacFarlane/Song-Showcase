@@ -4,15 +4,21 @@ import { Song } from "../Card/Song";
 
 interface MainProps {
     data: SongDeets[];
+    chooseSong: (song: SongDeets) => void;
+    removeFavorite: (song: SongDeets) => void;
 }
 
 export const Main: FC<MainProps> = (props: MainProps) => {
-const songs = props.data.map((song, index) => {
-    return <Song key={index} song={song} />
+const songs: JSX.Element[] = props.data.map((song: SongDeets, index: number) => {
+    return <Song 
+        key={index} 
+        song={song}
+        chooseSong={props.chooseSong}
+        removeFavorite={props.removeFavorite} />
 })
     return (
-        <div>
+        <main>
             {songs}
-        </div>
+        </main>
     )
 }

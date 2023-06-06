@@ -1,11 +1,15 @@
 import React, {useState, useEffect} from "react";
-
+import { Link } from "react-router-dom";
+import "./Header.css";
 export const Header = () => {
     return (
-        <div>
-            <p>
-                Hello Header
-            </p>
-        </div>
+      <nav className="nav-bar">
+        <Link to="/">
+            Home
+        </Link>
+        <Link to="/favorites">
+            Favorited
+        </Link>
+      </nav>
     )
 }
