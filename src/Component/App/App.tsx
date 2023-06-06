@@ -29,8 +29,8 @@ const App: React.FC = () => {
     setFavorites(newFavState);
   }
 
-  const removeFavorite = (song: SongDeets) => {
-    const newFavState = favorites.filter(fav => fav.id!== song.id);
+  const removeFavorite = (songToRemove: SongDeets) => {
+    const newFavState = favorites.filter((fav) => fav.id !== songToRemove.id);
     setFavorites(newFavState);
   }
   const fetchData = async () => {
@@ -62,13 +62,12 @@ const App: React.FC = () => {
     fetchData();
   }, []);
 
-  
 
   return (
     <section className="App">
      <Header/>
-       {loading && <h2>Loading...</h2>}
-       {error && <Error />}
+      {loading && <h2>Loading...</h2>}
+      {error && <Error />}
      <Switch>
        <Route 
         exact path="/" 
@@ -80,7 +79,7 @@ const App: React.FC = () => {
          )}
        />
       <Route 
-        exact path="/favorites" 
+        path="/favorites" 
         render={() => (
         <Main 
           data={favorites}
