@@ -24,7 +24,24 @@ export const Song: React.FC<SongProps> = (props: SongProps) => {
            removeFavorite(song);
       }
       }
-
+      const getSongTitleStyle = (): React.CSSProperties => {
+        if (song.artistName === "Pi'erre Bourne") {
+          return {
+            fontFamily: "'BubbleFont', Arial, sans-serif",
+          };
+        } else if (song.artistName === "Lana Del Rey") {
+          return {
+            fontFamily: "CursiveFont",
+            fontStyle: "italic",
+          };
+        } else if (song.artistName === "Radiohead") {
+            return {
+              fontFamily: "'bdplakatt', Arial, sans-serif",
+            }
+        } else {
+          return {};
+        }
+      };
 
 
 
@@ -33,7 +50,7 @@ export const Song: React.FC<SongProps> = (props: SongProps) => {
    return (
        <div className="song">
            <img src={song.albumCover} alt={song.albumTitle} />
-           <h3>{song.title}</h3>
+           <h3 style={getSongTitleStyle()}>{song.title}</h3>
            <button
                name={song.title}
                onClick={() => handleFavorite()}

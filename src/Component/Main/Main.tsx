@@ -1,6 +1,7 @@
 import React, {useState, useEffect, FC} from "react";
 import { SongDeets } from "../App/App";
 import { Song } from "../Card/Song";
+import '../../assets/fonts/fonts.css'
 import "./Main.css";
 interface MainProps {
    data: SongDeets[];
