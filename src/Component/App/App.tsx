@@ -6,112 +6,101 @@ import {Header} from '../Header/Header';
 import {Error} from '../Error/Error';
 import {Main} from '../Main/Main';
 
+
 export type SongDeets = {
-  id: number
-  title: string
-  albumTitle: string
-  albumCover: string
-  artistId: number
-  artistName: string
-  rank: number
-  favorited: boolean
+ id: number
+ title: string
+ albumTitle: string
+ albumCover: string
+ artistId: number
+ artistName: string
+ rank: number
+ favorited: boolean
 }
+
 
 const App: React.FC = () => {
-  const [songs, setSongs] = useState<SongDeets[]>([]);
-  const [favorites, setFavorites] = useState<SongDeets[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<Error | null>(null);
+ const [songs, setSongs] = useState<SongDeets[]>([]);
+ const [favorites, setFavorites] = useState<SongDeets[]>([]);
+ const [loading, setLoading] = useState(true);
+ const [error, setError] = useState<Error | null>(null);
 
-const chooseSong = (song: SongDeets) => {
-  const existingFavorite = favorites.find(fav => fav.id === song.id);
 
-  if (existingFavorite) {
-    setFavorites([...favorites])
-  } else {
-    const newFavState = [...favorites, {...song, favorited: true}]
-    setFavorites(newFavState)
-  }
+
+
+ const chooseSong = (song: SongDeets) => {
+   const newFavState = [...favorites, song];
+   setFavorites(newFavState);
+ }
+ const removeFavorite = (songToRemove: SongDeets) => {
+ const newFavState = favorites.filter((fav) => fav.id !== songToRemove.id);
+ setFavorites(newFavState);
 }
 
-  // const chooseSong = (song: SongDeets) => {
-  //   const newFavState = [...favorites, song];
-  //   setFavorites(newFavState);
-  // }
-const removeFavorite = (songToRemove: SongDeets) => {
-  const updatedFavorites = favorites.map((fav) => {
-    if (fav.id === songToRemove.id) {
-      return {...fav, favorited: false}
-    }
-    return fav
-  })
 
-  setFavorites(updatedFavorites)
-}
-  // const removeFavorite = (songToRemove: SongDeets) => {
-  //   const newFavState = favorites.filter(
-  //     (fav) => fav.id !== songToRemove.id
-  //     );
-  //   setFavorites(newFavState);
-  // }
-  const fetchData = async () => {
-    const fetchFunctions = [
-      fetchPierreBourneData(),
-      fetchRadioHeadData(),
-      fetchFrankOceanData(),
-      fetchAsapRockyData(),
-      fetchLanaDelReyData(),
-      fetchDeftonesData(),
-      fetchDestroyLonelyData(),
-      fetchPlayboiCarti(),
-      fetchTheCureData(),
-      fetchKendrickLamarData()
-    ];
-  
+ const fetchData = async () => {
+   const fetchFunctions = [
+     fetchPierreBourneData(),
+     fetchRadioHeadData(),
+     fetchFrankOceanData(),
+     fetchAsapRockyData(),
+     fetchLanaDelReyData(),
+     fetchDeftonesData(),
+     fetchDestroyLonelyData(),
+     fetchPlayboiCarti(),
+     fetchTheCureData(),
+     fetchKendrickLamarData()
+   ];
     try {
-      const fetchedData = await Promise.all(fetchFunctions);
-      const combinedData = fetchedData.flat() as SongDeets[]
-      setSongs(combinedData);
-      setLoading(false);
-    } catch (error) {
-      setError(error as Error | null);
-      setLoading(false);
-    }
-  };
-  
+     const fetchedData = await Promise.all(fetchFunctions);
+     const combinedData = fetchedData.flat() as SongDeets[]
+     setSongs(combinedData);
+     setLoading(false);
+   } catch (error) {
+     setError(error as Error | null);
+     setLoading(false);
+   }
+ };
   useEffect(() => {
-    fetchData();
-  }, []);
+   fetchData();
+ }, []);
 
 
-  return (
-    <section className="App">
-     <Header/>
-      {loading && <h2>Loading...</h2>}
-      {error && <Error />}
-     <Switch>
-       <Route 
-        exact path="/" 
-        render={() => (
-         <Main 
-          data={songs}
-          chooseSong={chooseSong}
-          removeFavorite={removeFavorite}/>
-         )}
-       />
-      <Route 
-        path="/favorites" 
-        render={() => (
-        <Main 
-          data={favorites}
-          chooseSong={chooseSong}
-          removeFavorite={removeFavorite}/>
-        )} 
+
+
+ return (
+   <section className="App">
+    <Header/>
+     {loading && <h2>Loading...</h2>}
+     {error && <Error />}
+    <Switch>
+      <Route
+       exact path="/"
+       render={() => (
+        <Main
+         data={songs}
+         chooseSong={chooseSong}
+         removeFavorite={removeFavorite}
+
+
+         />
+        )}
       />
-      <Route path="*" render={() => <Error />}/>
-     </Switch>
-    </section>
-  );
+     <Route
+       path="/favorites"
+       render={() => (
+       <Main
+         data={favorites}
+         chooseSong={chooseSong}
+         removeFavorite={removeFavorite}
+        />
+       )}
+     />
+     <Route path="*" render={() => <Error />}/>
+    </Switch>
+   </section>
+ );
 }
+
 
 export default App;
