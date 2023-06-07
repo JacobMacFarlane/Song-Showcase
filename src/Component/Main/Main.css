@@ -1,0 +1,10 @@
+.main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .song {
+    width: calc(33.33% - 20px); /* Adjust the width based on your desired layout */
+    margin-bottom: 20px;
+  }

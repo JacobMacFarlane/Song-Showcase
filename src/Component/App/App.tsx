@@ -23,37 +23,17 @@ const App: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<Error | null>(null);
 
-const chooseSong = (song: SongDeets) => {
-  const existingFavorite = favorites.find(fav => fav.id === song.id);
 
-  if (existingFavorite) {
-    setFavorites([...favorites])
-  } else {
-    const newFavState = [...favorites, {...song, favorited: true}]
-    setFavorites(newFavState)
+  const chooseSong = (song: SongDeets) => {
+    const newFavState = [...favorites, song];
+    setFavorites(newFavState);
   }
-}
-
-  // const chooseSong = (song: SongDeets) => {
-  //   const newFavState = [...favorites, song];
-  //   setFavorites(newFavState);
-  // }
+  
 const removeFavorite = (songToRemove: SongDeets) => {
-  const updatedFavorites = favorites.map((fav) => {
-    if (fav.id === songToRemove.id) {
-      return {...fav, favorited: false}
-    }
-    return fav
-  })
-
-  setFavorites(updatedFavorites)
+  const newFavState = favorites.filter((fav) => fav.id !== songToRemove.id);
+  setFavorites(newFavState);
 }
-  // const removeFavorite = (songToRemove: SongDeets) => {
-  //   const newFavState = favorites.filter(
-  //     (fav) => fav.id !== songToRemove.id
-  //     );
-  //   setFavorites(newFavState);
-  // }
+
   const fetchData = async () => {
     const fetchFunctions = [
       fetchPierreBourneData(),
@@ -96,7 +76,9 @@ const removeFavorite = (songToRemove: SongDeets) => {
          <Main 
           data={songs}
           chooseSong={chooseSong}
-          removeFavorite={removeFavorite}/>
+          removeFavorite={removeFavorite}
+
+          />
          )}
        />
       <Route 
@@ -105,7 +87,8 @@ const removeFavorite = (songToRemove: SongDeets) => {
         <Main 
           data={favorites}
           chooseSong={chooseSong}
-          removeFavorite={removeFavorite}/>
+          removeFavorite={removeFavorite}
+         />
         )} 
       />
       <Route path="*" render={() => <Error />}/>

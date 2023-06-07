@@ -1,7 +1,7 @@
 import React, {useState, useEffect, FC} from "react";
 import { SongDeets } from "../App/App";
 import { Song } from "../Card/Song";
-
+import "./Main.css";
 interface MainProps {
     data: SongDeets[];
     chooseSong: (song: SongDeets) => void;
@@ -16,11 +16,12 @@ const songs: JSX.Element[] = props.data.map(
             key={index} 
             song={song}
             chooseSong={props.chooseSong}
-            removeFavorite={props.removeFavorite} />
+            removeFavorite={props.removeFavorite}
+            />
     )
 })
     return (
-        <main>
+        <main className="main">
             {songs}
         </main>
     )
