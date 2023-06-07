@@ -23,17 +23,37 @@ const App: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<Error | null>(null);
 
-  const chooseSong = (song: SongDeets) => {
-    const newFavState = [...favorites, song];
-    setFavorites(newFavState);
-  }
+const chooseSong = (song: SongDeets) => {
+  const existingFavorite = favorites.find(fav => fav.id === song.id);
 
-  const removeFavorite = (songToRemove: SongDeets) => {
-    const newFavState = favorites.filter(
-      (fav) => fav.id !== songToRemove.id
-      );
-    setFavorites(newFavState);
+  if (existingFavorite) {
+    setFavorites([...favorites])
+  } else {
+    const newFavState = [...favorites, {...song, favorited: true}]
+    setFavorites(newFavState)
   }
+}
+
+  // const chooseSong = (song: SongDeets) => {
+  //   const newFavState = [...favorites, song];
+  //   setFavorites(newFavState);
+  // }
+const removeFavorite = (songToRemove: SongDeets) => {
+  const updatedFavorites = favorites.map((fav) => {
+    if (fav.id === songToRemove.id) {
+      return {...fav, favorited: false}
+    }
+    return fav
+  })
+
+  setFavorites(updatedFavorites)
+}
+  // const removeFavorite = (songToRemove: SongDeets) => {
+  //   const newFavState = favorites.filter(
+  //     (fav) => fav.id !== songToRemove.id
+  //     );
+  //   setFavorites(newFavState);
+  // }
   const fetchData = async () => {
     const fetchFunctions = [
       fetchPierreBourneData(),
