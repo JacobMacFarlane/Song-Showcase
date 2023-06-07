@@ -1,4 +1,14 @@
 .nav-bar {
+    position: sticky;
+    top: 0;
+    background-color: #f2f2f2;
+    z-index: 1;
+  }
+   .nav-container {
     display: flex;
     justify-content: space-between;
-}
+    padding: 10px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+ 

@@ -8,18 +8,15 @@ interface SongProps {
 }
 
 export const Song: React.FC<SongProps> = (props: SongProps) => {
-    // const [favorite, setFavorite] = useState(false);
     const {song, chooseSong, removeFavorite} = props
 
    const handleFavorite = () => {
     if (!song.favorited) {
         song.favorited = true;
         chooseSong(song);
-        // setFavorite(true);
         } else {
         song.favorited= false
         removeFavorite(song);
-        // setFavorite(false);
    }
    }
     return (
