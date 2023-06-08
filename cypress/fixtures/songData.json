@@ -1,0 +1,44 @@
+{
+ "data": [{
+    "id":1393802972,
+    "readable":true,
+    "title":"Drunk And Nasty",
+    "title_short":"Drunk And Nasty",
+    "title_version":"",
+    "link":"https://www.deezer.com/track/1393802972",
+    "duration":299,
+    "rank":532090,
+    "explicit_lyrics":true,
+    "explicit_content_lyrics":1,
+    "explicit_content_cover":1,
+    "preview":"https://cdns-preview-9.dzcdn.net/stream/c-92f5c2718d00b436a510dab860ca3386-4.mp3",
+    "md5_image":"7149dbe22da43b05eb911527646eed2f",
+    "artist": {
+        "id":6828755,
+"name":"Pi'erre Bourne",
+"link":"https://www.deezer.com/artist/6828755",
+"picture":"https://api.deezer.com/artist/6828755/image",
+"picture_small":"https://e-cdns-images.dzcdn.net/images/artist/66c62d82d9e6bbe51de55217fa1633cf/56x56-000000-80-0-0.jpg",
+"picture_medium":"https://e-cdns-images.dzcdn.net/images/artist/66c62d82d9e6bbe51de55217fa1633cf/250x250-000000-80-0-0.jpg",
+"picture_big":"https://e-cdns-images.dzcdn.net/images/artist/66c62d82d9e6bbe51de55217fa1633cf/500x500-000000-80-0-0.jpg",
+"picture_xl":"https://e-cdns-images.dzcdn.net/images/artist/66c62d82d9e6bbe51de55217fa1633cf/1000x1000-000000-80-0-0.jpg",
+"tracklist":"https://api.deezer.com/artist/6828755/top?limit=50",
+"type":"artist"
+    },
+    "album": {
+        "id":234944732,
+"title":"The Life Of Pi'erre 5",
+"cover":"https://api.deezer.com/album/234944732/image",
+"cover_small":"https://e-cdns-images.dzcdn.net/images/cover/7149dbe22da43b05eb911527646eed2f/56x56-000000-80-0-0.jpg",
+"cover_medium":"https://e-cdns-images.dzcdn.net/images/cover/7149dbe22da43b05eb911527646eed2f/250x250-000000-80-0-0.jpg",
+"cover_big":"https://e-cdns-images.dzcdn.net/images/cover/7149dbe22da43b05eb911527646eed2f/500x500-000000-80-0-0.jpg",
+"cover_xl":"https://e-cdns-images.dzcdn.net/images/cover/7149dbe22da43b05eb911527646eed2f/1000x1000-000000-80-0-0.jpg",
+"md5_image":"7149dbe22da43b05eb911527646eed2f",
+"tracklist":"https://api.deezer.com/album/234944732/tracks",
+"type":"album"
+    }}
+    ] 
+}
+        
+
+  
