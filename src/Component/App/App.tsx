@@ -26,8 +26,6 @@ const App: React.FC = () => {
  const [error, setError] = useState<Error | null>(null);
 
 
-
-
  const chooseSong = (song: SongDeets) => {
    const newFavState = [...favorites, song];
    setFavorites(newFavState);
@@ -54,6 +52,7 @@ const App: React.FC = () => {
     try {
      const fetchedData = await Promise.all(fetchFunctions);
      const combinedData = fetchedData.flat() as SongDeets[]
+     console.log(combinedData, 'right here');
      setSongs(combinedData);
      setLoading(false);
    } catch (error) {

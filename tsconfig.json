@@ -22,5 +22,6 @@
   },
   "include": [
     "src"
-, "env.d.ts"  ]
+, "env.d.ts" , 
+"cypress/**/*.ts" ]
 }

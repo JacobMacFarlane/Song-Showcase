@@ -72,6 +72,7 @@ const options = {
 
 try {
 	const response = await fetch(url, options);
+	
 	const result = await response.json();
 	const cleanedData = getCleanData(result.data)
 	return cleanedData;
@@ -92,8 +93,11 @@ const options = {
 
 try {
 	const response = await fetch(url, options);
+	console.log(response, 'response')
 	const result = await response.json()
+	console.log(result, 'result')
 	const cleanedData = getCleanData(result.data)
+	console.log(cleanedData, 'cleanedDAta')
 	return cleanedData;
 } catch (error) {
 	console.error(error);
