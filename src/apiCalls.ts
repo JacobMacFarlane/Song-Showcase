@@ -13,11 +13,15 @@ const options = {
 
 try {
 	const response = await fetch(url, options);
+	 if (!response.ok) {
+      throw new Error('Request failed');
+    }
 	const result = await response.json()
     const cleanedData = getCleanData(result.data)
 	return cleanedData;
 } catch (error) {
-	console.error(error);
+	throw new Error('Error fetching lana del rey data');
+
 }
 }
   export const fetchAsapRockyData = async () => {
@@ -32,12 +36,14 @@ try {
   
     try {
       const response = await fetch(url, options);
+	  if (!response.ok) {
+		throw new Error('Request failed');
+	  }
       const result = await response.json()
       const cleanedData = getCleanData(result.data)
 	    return cleanedData;
     } catch (error) {
-      console.error(error);
-      return null;
+		throw new Error('Error fetching Asap Rocky data');
     }
   };
   export const fetchFrankOceanData = async () => {
@@ -52,11 +58,15 @@ const options = {
 
 try {
 	const response = await fetch(url, options);
+	 if (!response.ok) {
+      throw new Error('Request failed');
+    }
 	const result = await response.json();
 	const cleanedData = getCleanData(result.data)
 	return cleanedData;
 } catch (error) {
-	console.error(error);
+	throw new Error('Error Fetching Frank Ocean data');
+
 }
   }
 
@@ -72,12 +82,16 @@ const options = {
 
 try {
 	const response = await fetch(url, options);
+	 if (!response.ok) {
+      throw new Error('Request failed');
+    }
 	
 	const result = await response.json();
 	const cleanedData = getCleanData(result.data)
 	return cleanedData;
 } catch (error) {
-	console.error(error);
+	throw new Error('Error fetching Radiohead data');
+
 }
 }
 
@@ -93,14 +107,18 @@ const options = {
 
 try {
 	const response = await fetch(url, options);
-	console.log(response, 'response')
+	 if (!response.ok) {
+      throw new Error('Request failed');
+    }
+	
 	const result = await response.json()
-	console.log(result, 'result')
+	
 	const cleanedData = getCleanData(result.data)
-	console.log(cleanedData, 'cleanedDAta')
+	
 	return cleanedData;
 } catch (error) {
-	console.error(error);
+	throw new Error('Error Fetching Pierre Bourne')
+
 }
 }
 export const fetchTheCureData = async () => {
@@ -115,11 +133,15 @@ const options = {
 
 try {
 	const response = await fetch(url, options);
+	 if (!response.ok) {
+      throw new Error('Request failed');
+    }
 	const result = await response.json()
 	const cleanedData = getCleanData(result.data)
 	return cleanedData;
 } catch (error) {
-	console.error(error);
+	throw new Error('Error fetching the Cure data')
+
 }
 }
 export const fetchDestroyLonelyData = async () => {
@@ -138,7 +160,8 @@ export const fetchDestroyLonelyData = async () => {
         const cleanedData = getCleanData(result.data)
 	return cleanedData;
     } catch (error) {
-        console.error(error);
+		throw new Error('Error fetching the Destroy Lonely data')
+
     }
 }
 export const fetchDeftonesData = async () => {
@@ -153,11 +176,14 @@ const options = {
 
 try {
 	const response = await fetch(url, options);
+	 if (!response.ok) {
+      throw new Error('Request failed');
+    }
 	const result = await response.json()
 	const cleanedData = getCleanData(result.data)
 	return cleanedData;
 } catch (error) {
-	console.error(error);
+	throw new Error('Error fetching the Deftones data')
 }
 }
 export const fetchPlayboiCarti = async () => {
@@ -172,11 +198,15 @@ const options = {
 
 try {
 	const response = await fetch(url, options);
+	 if (!response.ok) {
+      throw new Error('Request failed');
+    }
 	const result = await response.json()
 	const cleanedData = getCleanData(result.data)
 	return cleanedData;
 } catch (error) {
-	console.error(error);
+	throw new Error('Error fetching the Playboi Carti data')
+
 }
 }
 export const fetchKendrickLamarData = async () => {
@@ -191,10 +221,13 @@ const options = {
 
 try {
 	const response = await fetch(url, options);
+	 if (!response.ok) {
+      throw new Error('Request failed');
+    }
 	const result = await response.json()
 	const cleanedData = getCleanData(result.data)
 	return cleanedData;
 } catch (error) {
-	console.error(error);
+	throw new Error('Error fetching the Kendrick Lamar data')
 }
 }

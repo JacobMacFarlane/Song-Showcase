@@ -23,7 +23,7 @@ const App: React.FC = () => {
  const [songs, setSongs] = useState<SongDeets[]>([]);
  const [favorites, setFavorites] = useState<SongDeets[]>([]);
  const [loading, setLoading] = useState(true);
- const [error, setError] = useState<Error | null>(null);
+ const [error, setError] = useState<string | null>(null);
 
 
  const chooseSong = (song: SongDeets) => {
@@ -52,11 +52,18 @@ const App: React.FC = () => {
     try {
      const fetchedData = await Promise.all(fetchFunctions);
      const combinedData = fetchedData.flat() as SongDeets[]
+    
+     if (!fetchedData) {
+      setError('Error fetching data');
+     }
+
      console.log(combinedData, 'right here');
      setSongs(combinedData);
      setLoading(false);
-   } catch (error) {
-     setError(error as Error | null);
+
+   } catch (err: any) {
+
+     setError('There was an error fetching data, we are working to get it working, PLease try again later');
      setLoading(false);
    }
  };
@@ -71,7 +78,7 @@ const App: React.FC = () => {
    <section className="App">
     <Header/>
      {loading && <h2>Loading...</h2>}
-     {error && <Error />}
+     {error && <Error message={error}/>}
     <Switch>
       <Route
        exact path="/"
