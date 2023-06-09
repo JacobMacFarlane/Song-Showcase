@@ -4,7 +4,7 @@
 This project challenged me to create a project that reflected me in a short amount of time. I decided to utilize TypeScript, along with React and React Router, to create a Song Favoriter. The application allows users to browse and favorite Songs from the Deezer API, providing an interactive and enjoyable experience for Music fans.
 
 ### Installation and Usage
-[Click this link]()
+[Click this link](https://song-showcase-l0v955wgo-jacobmacfarlane.vercel.app/)
 
 ### Preview:
 
