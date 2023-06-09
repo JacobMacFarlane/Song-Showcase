@@ -44,7 +44,13 @@ const App: React.FC = () => {
       "The Cure",
       "Asap Rocky",
       "Destroy Lonely",
-      "Pastel Ghost"
+      "Pastel Ghost",
+      "No Doubt",
+      "The Marias",
+      "Lil Uzi Vert",
+      "Logic",
+      "The Smiths",
+      "Smashing Pumpkins"
     ]
     const fetchFunctions = artists.map((artist) => fetchArtistData(artist));
     try {
