@@ -1,29 +1,30 @@
 @font-face {
-    font-family: 'NOPELIA MOMENT' ;
-    src: url('../../assets/fonts/NOPELIA\ MOMENT.ttf');
+  font-family: "NOPELIA MOMENT";
+  src: url("../../assets/fonts/NOPELIA\ MOMENT.ttf");
 }
 .nav-bar {
-    position: sticky;
-    top: 0;
-    background-color: #f2f2f2;
-    z-index: 1;
-    box-shadow: 5px 2px 2px;
-  }
-   .nav-container {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 20px;
-    max-width: 100vw;
-    margin: 0 auto;
-  }
- .logo, .fav {
-    height: 50px;
- }
- .nav-font {
-    font-family: 'NOPELIA MOMENT' ;
-    color: #725293;
-    font-size: 32px; /* Adjust the size based on your preference */
+  position: sticky;
+  top: 0;
+  background-color: #f2f2f2;
+  z-index: 1;
+  box-shadow: 5px 2px 2px;
+}
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  max-width: 100vw;
+  margin: 0 auto;
+}
+.logo,
+.fav {
+  height: 50px;
+}
+.nav-font {
+  font-family: "NOPELIA MOMENT";
+  color: #725293;
+  font-size: 32px; 
   transform: rotate(-2deg);
   margin: 0px;
   margin-top: 5px;
- }
+}

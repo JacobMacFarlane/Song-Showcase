@@ -1,46 +1,66 @@
-# Getting Started with Create React App
+# SongVersuz ReadME
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Project Abstract
+This project challenged me to create a project that reflected me in a short amount of time. I decided to utilize TypeScript, along with React and React Router, to create a Song Favoriter. The application allows users to browse and favorite Songs from the Deezer API, providing an interactive and enjoyable experience for Music fans.
 
-## Available Scripts
+### Installation and Usage
+[Click this link]()
 
-In the project directory, you can run:
+### Preview:
 
-### `npm start`
+![preview](/src/assets/images/Screenshot%202023-06-08%20at%205.13.45%20PM.png)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Challenges and Struggles
+Utilizing an API that required authorization from an API key was a new challenge for me which I then had to figure out how to utilize typeScript on top of it was one of the biggest challenges.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Syntax and Typing: 
+TypeScript introduces a new syntax and requires explicit typing. We had to familiarize ourselves with the TypeScript syntax and understand how to apply types to variables, functions, and components.
 
-### `npm test`
+### Type Errors: 
+TypeScript enforces strict typing, which meant we had to ensure that all variables and functions were properly typed. We encountered type errors and had to debug and fix them to ensure the code was valid.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Integration with React: 
+Integrating TypeScript with React required understanding how to apply types to React components, props, and state. We had to refactor our existing React components to include TypeScript types and ensure proper integration with React features.
 
-### `npm run build`
+### Tooling and Configuration: 
+Setting up TypeScript in our project required configuring the TypeScript compiler, updating project files, and installing TypeScript-specific tooling. We had to learn how to use TypeScript-specific tools and understand their role in the development workflow.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Learning Curve: 
+Learning a new technology always involves a learning curve. We had to dedicate time and effort to understand TypeScript concepts, best practices, and how to apply them effectively in our project.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Wins
+Despite the challenges faced, I achieved several wins while learning and implementing TypeScript:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Improved Code Quality: 
+TypeScript's static typing helped catch errors early in the development process. By ensuring variables and functions were properly typed, I improved the overall code quality and reduced runtime errors.
 
-### `npm run eject`
+### Enhanced Developer Experience: 
+TypeScript's tooling and IDE support improved our development experience. Features such as autocompletion, type checking, and error highlighting helped us write more robust and error-free code.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Reduced Debugging Time: 
+TypeScript's type system helped catch many potential bugs during development, reducing the time spent on debugging. The compiler's feedback guided us in fixing issues early on, improving the overall development efficiency.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Increased Confidence in Refactoring: 
+With TypeScript, refactoring became less daunting. The static typing allowed me to make changes with confidence, knowing that the TypeScript compiler would catch any breaking changes or inconsistencies.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Core Components Worked On
+Here are the core components that I worked on:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### App
+- The App component is the main component of the application. It fetches data from the Deezer API and manages the state of the songs and favorites. It also renders the Header, Error, and Main components based on the application state.
+### Main
+- The Main component renders the main content of the application, which is a list of songs. It receives the song data, chooseSong, and removeFavorite functions as props and maps the song data to individual Song components.
+### Song
+- The Song component represents an individual song. It receives the song data, chooseSong, and removeFavorite functions as props. It displays the song title, album cover, and a button to mark the song as a favorite.
+### Utilities
+- Contains utility functions used within the application.
+- Provides the cleanData function to format and clean the song data received from the API.
+### Cypress Testing
+- Contains Cypress tests for the Favorites Page and Main Page.
+- Tests the functionality of favoriting and unfavoriting songs, as well as the rendering of song details.
+- Tests also account for server errors and bad routes
+## Conclusion
+This project was my first stab at utilzing TypeScript by myself in a solo setting and i absoulutly loved it! It has really changed my way of going at code, now I love to start from the top component and work my way down to the bottom utilzing typeScript as I go!
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Contributor
+- Jacob MacFarlane - [Github](https://github.com/JacobMacFarlane) | [LinkedIn](https://www.linkedin.com/in/jacob-macfarlane-052593261/)

@@ -1,53 +1,55 @@
 @font-face {
-    font-family: 'NOPELIA MOMENT' ;
-    src: url('../../assets/fonts/NOPELIA\ MOMENT.ttf');
+  font-family: "NOPELIA MOMENT";
+  src: url("../../assets/fonts/NOPELIA\ MOMENT.ttf");
 }
 
 .main {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    grid-template-rows: minmax(350px, auto); /* Adjust the row height based on your desired size */
-    gap: 20px;
-  }
-  
-  .song {
-    margin: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    border: solid 1px black;
-    border-radius: 10px;
-    box-shadow: 5px 2px 2px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-rows: minmax(
+    350px,
+    auto
+  ); 
+  gap: 20px;
+}
 
-    background-color: white;
-  }
-  
-  .song img {
-    width: 150px;
-    height: auto;
-    object-fit: cover;
-    margin-bottom: 10px;
-    margin-top: 10px;
-  }
-  
-  .song h3 {
-    margin-bottom: 10px;
-  }
-  
-  .song button {
-    padding: 8px 16px;
-    background-color: rgb(183, 0, 255);
-    color: #ffffff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 14px;
-    font-family: "NOPELIA MOMENT";
-    margin-bottom: 10px;
-  }
-  
-  .song button:hover {
-    background-color: #725293;
-  }
+.song {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: solid 1px black;
+  border-radius: 10px;
+  box-shadow: 5px 2px 2px;
+  background-color: white;
+}
+
+.song img {
+  width: 150px;
+  height: auto;
+  object-fit: cover;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.song h3 {
+  margin-bottom: 10px;
+}
+
+.song button {
+  padding: 8px 16px;
+  background-color: rgb(183, 0, 255);
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-family: "NOPELIA MOMENT";
+  margin-bottom: 10px;
+}
+
+.song button:hover {
+  background-color: #725293;
+}
