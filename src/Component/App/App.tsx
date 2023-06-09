@@ -1,17 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Switch, Route } from "react-router-dom";
-import {
-  fetchAsapRockyData,
-  fetchDeftonesData,
-  fetchDestroyLonelyData,
-  fetchFrankOceanData,
-  fetchKendrickLamarData,
-  fetchLanaDelReyData,
-  fetchPierreBourneData,
-  fetchPlayboiCarti,
-  fetchRadioHeadData,
-  fetchTheCureData,
-} from "../../apiCalls";
+import {fetchArtistData} from "../../apiCalls";
 import "./App.css";
 import { Header } from "../Header/Header";
 import { Error } from "../Error/Error";
@@ -44,18 +33,26 @@ const App: React.FC = () => {
   };
 
   const fetchData = async () => {
-    const fetchFunctions = [
-      fetchPierreBourneData(),
-      fetchRadioHeadData(),
-      fetchFrankOceanData(),
-      fetchAsapRockyData(),
-      fetchLanaDelReyData(),
-      fetchDeftonesData(),
-      fetchDestroyLonelyData(),
-      fetchPlayboiCarti(),
-      fetchTheCureData(),
-      fetchKendrickLamarData(),
-    ];
+    const artists = [
+      "Pierre Bourne",
+      "Kendrick Lamar",
+      "Lana Del Rey",
+      "Deftones",
+      "Frank Ocean",
+      "Playboi Carti",
+      "Radio Head",
+      "The Cure",
+      "Asap Rocky",
+      "Destroy Lonely",
+      "Pastel Ghost",
+      "No Doubt",
+      "The Marias",
+      "Lil Uzi Vert",
+      "Logic",
+      "The Smiths",
+      "Smashing Pumpkins"
+    ]
+    const fetchFunctions = artists.map((artist) => fetchArtistData(artist));
     try {
       const fetchedData = await Promise.all(fetchFunctions);
       const combinedData = fetchedData.flat() as SongDeets[];
@@ -63,8 +60,8 @@ const App: React.FC = () => {
       if (!fetchedData) {
         setError("Error fetching data");
       }
-
-      setSongs(combinedData);
+      const randomizedData = combinedData.sort(() => Math.random() - 0.5);
+      setSongs(randomizedData);
       setLoading(false);
     } catch (err: any) {
       setError(
